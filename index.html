@@ -74,29 +74,30 @@ h1,h2,h3,h4{font-family:'Manrope',sans-serif;color:var(--green);line-height:1.15
  
 .wa-bar{
   position:fixed;
-  bottom:32px;
+  bottom:40px;
   left:50%;
   transform:translateX(-50%);
   z-index:999;
   background:#1e3022;
   border-radius:50px;
-  border:2px solid var(--terra);
-  box-shadow:0 10px 25px rgba(30,48,34,0.35);
+  border:1.5px solid var(--terra);
+  box-shadow:0 8px 20px rgba(30,48,34,0.3);
   white-space:nowrap;
 }
 .wa-bar a{
   display:flex;
   align-items:center;
   gap:8px;
-  padding:12px 22px;
+  padding:10px 24px;
   color:var(--terra);
   font-family:'Manrope',sans-serif;
   font-size:14px;
   font-weight:700;
-  transition:transform .3s ease,box-shadow .3s ease;
+  letter-spacing:.02em;
+  transition:transform .3s ease;
 }
-.wa-bar a:hover{transform:scale(1.05)}
-.wa-bar svg{width:18px;height:18px;fill:var(--terra);flex-shrink:0}
+.wa-bar a:hover{transform:scale(1.04)}
+.wa-bar svg{width:17px;height:17px;fill:var(--terra);flex-shrink:0}
 @media(min-width:768px){.wa-bar{display:none}}
 .btn-ghost{background:rgba(255,255,255,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,.3);font-size:14px;padding:13px 24px}
 .btn-ghost:hover{background:rgba(255,255,255,.22)}
@@ -104,8 +105,20 @@ h1,h2,h3,h4{font-family:'Manrope',sans-serif;color:var(--green);line-height:1.15
 /* NAV */
 nav{position:sticky;top:0;z-index:200;background:#F7F1E6;height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;transition:box-shadow var(--t)}
 nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
-.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-phone{font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:var(--green);text-decoration:none;transition:color var(--t)}
+.nav-phone:hover{color:var(--terra)}
+.nav-logo{display:flex;align-items:center;text-decoration:none;position:absolute;left:50%;transform:translateX(-50%)}
 .nav-logo img{height:38px;width:auto}
+.nav-right{display:flex;align-items:center}
+.burger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:6px}
+.burger span{display:block;width:22px;height:2px;background:var(--green);border-radius:2px;transition:transform var(--t),opacity var(--t)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-links-desktop{display:none;list-style:none;gap:28px;align-items:center}
+.nav-links-desktop a{font-family:'Manrope',sans-serif;font-size:14px;font-weight:600;color:var(--text);transition:color var(--t)}
+.nav-links-desktop a:hover{color:var(--green)}
+@media(min-width:768px){nav{padding:0 48px}.nav-links-desktop{display:flex}}
 .nav-right{display:flex;align-items:center;gap:12px}
 .nav-call{font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:var(--terra);background:#1e3022;border:1.5px solid var(--terra);padding:8px 16px;border-radius:50px;transition:background var(--t)}
 .nav-call:hover{background:#162619}
@@ -357,7 +370,9 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
 .cta-block h2{color:var(--green);font-size:clamp(26px,5vw,40px);font-weight:800;margin-bottom:14px;letter-spacing:-.02em}
 .cta-block p{color:var(--muted);font-size:16px;margin-bottom:36px;max-width:420px;margin-left:auto;margin-right:auto}
 .cta-btns{display:flex;flex-direction:column;align-items:center;gap:14px}
-.cta-phone{color:var(--green);font-family:'Manrope',sans-serif;font-size:16px;font-weight:700}
+@keyframes line-slide{0%{width:0;left:0}50%{width:100%;left:0}51%{width:100%;right:0;left:auto}100%{width:0;right:0;left:auto}}
+.cta-phone{color:var(--green);font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;position:relative;display:inline-block;margin-top:8px}
+.cta-phone::after{content:'';position:absolute;bottom:-4px;left:0;height:2px;background:var(--terra);animation:line-slide 2.5s ease-in-out infinite}
 @media(min-width:640px){.cta-btns{flex-direction:row;justify-content:center}.cta-block{padding:80px 48px;margin:0 24px}}
  
 /* FOOTER */
@@ -426,6 +441,7 @@ footer{background:var(--white);color:var(--text);padding:56px 20px 100px}
  
 <!-- NAV -->
 <nav id="nav">
+  <a href="tel:+421948480013" class="nav-phone">0948 480 013</a>
   <a href="#" class="nav-logo">
     <img src="logo_mobil.png" alt="Psí Raj – Hotel pre miláčikov">
   </a>
@@ -437,11 +453,6 @@ footer{background:var(--white);color:var(--text);padding:56px 20px 100px}
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <div class="nav-right">
-    <a href="tel:+421948480013" class="nav-call">Volať</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Prepnúť režim" title="Prepnúť tmavý/svetlý režim">
-      <svg id="iconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      <svg id="iconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
     <button class="burger" id="burger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -460,7 +471,7 @@ footer{background:var(--white);color:var(--text);padding:56px 20px 100px}
     <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
   </ul>
   <div class="sheet-cta">
-    <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green" onclick="closeMenu()">Napísať na WhatsApp</a>
+    <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green" onclick="closeMenu()">Napíšte nám</a>
     <a href="tel:+421948480013" class="btn" style="background:var(--sage);color:var(--green)" onclick="closeMenu()">Volať: 0948 480 013</a>
   </div>
 </div>
@@ -469,11 +480,11 @@ footer{background:var(--white);color:var(--text);padding:56px 20px 100px}
 <section class="hero">
   <div class="hero-content reveal">
     <div class="hero-text-col">
-      <span class="hero-badge">📍 Most pri Bratislave</span>
+      <span class="hero-badge">📍 Most pri Bratislave · od 20 € / deň</span>
       <h1>Doprajte im domov, kde sa cítia milovaní.</h1>
       <p class="hero-sub">Rodinná starostlivosť bez kotercov — pokojné miesto len pár minút od Bratislavy.</p>
       <div class="hero-btns">
-        <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-hero-wa btn-pulse">Napísať na WhatsApp</a>
+        <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-hero-wa btn-pulse">Napíšte nám</a>
         <a href="#veronika" class="btn btn-hero-more">Zistiť viac</a>
       </div>
     </div>
@@ -771,14 +782,14 @@ footer{background:var(--white);color:var(--text);padding:56px 20px 100px}
   </svg>
 </div>
  
-<!-- KONTAKT --> dark green -->
+<!-- KONTAKT -->
 <section class="section section-sage" style="padding-top:20px;padding-bottom:72px">
   <div class="cta-block reveal">
     <span class="eyebrow">Kontakt</span>
     <h2>Chcete ubytovať miláčika?</h2>
     <p>Napíšte nám na WhatsApp – odpovieme rýchlo a dohodneme všetko osobne.</p>
     <div class="cta-btns">
-      <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green btn-pulse">Napísať na WhatsApp</a>
+      <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green btn-pulse">Napíšte nám</a>
       <a href="tel:+421948480013" class="cta-phone">0948 480 013</a>
     </div>
   </div>
@@ -806,7 +817,7 @@ footer{background:var(--white);color:var(--text);padding:56px 20px 100px}
       <div class="footer-col">
         <h4>Kontakt</h4>
         <a href="tel:+421948480013">0948 480 013</a>
-        <a href="https://wa.me/421948480013">WhatsApp</a>
+        <a href="https://wa.me/421948480013">Napíšte nám</a>
         <p>Nálepková 302, Most pri Bratislave</p>
         <a href="https://facebook.com/profile.php?id=61567472106626" target="_blank" rel="noopener">Facebook</a>
       </div>
@@ -829,14 +840,14 @@ footer{background:var(--white);color:var(--text);padding:56px 20px 100px}
 <div class="wa-bar">
   <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika.">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Napísať na WhatsApp
+    Napíšte nám
   </a>
 </div>
  
 <!-- WA FLOAT DESKTOP -->
 <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="wa-float" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  Napísať na WhatsApp
+  Napíšte nám
 </a>
  
 <script>
