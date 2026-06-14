@@ -20,6 +20,7 @@ body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);fo
 img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
 h1,h2,h3,h4{font-family:'Manrope',sans-serif;color:var(--green);line-height:1.15}
+.paw-icon{display:inline-block;width:20px;height:20px;opacity:0.85;margin-bottom:8px;vertical-align:middle}
 .eyebrow{display:block;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
  
 /* CURVE DIVIDER */
@@ -29,8 +30,74 @@ h1,h2,h3,h4{font-family:'Manrope',sans-serif;color:var(--green);line-height:1.15
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;padding:15px 28px;border-radius:50px;border:none;cursor:pointer;transition:transform var(--t),box-shadow var(--t),background var(--t);white-space:nowrap}
 .btn:hover{transform:translateY(-2px)}
-.btn-green{background:var(--green-cta);color:#fff;box-shadow:0 4px 20px rgba(56,168,72,.25)}
-.btn-green:hover{background:#2d9040;box-shadow:0 8px 28px rgba(56,168,72,.35)}
+.btn-green{
+  background:#1e3022;
+  color:var(--terra);
+  border:2px solid var(--terra);
+  box-shadow:0 4px 20px rgba(30,48,34,.3);
+  padding:14px 32px;
+}
+.btn-green:hover{background:#162619;box-shadow:0 8px 28px rgba(30,48,34,.4)}
+ 
+.btn-hero-wa{
+  background:#1e3022;
+  color:var(--terra);
+  border:2px solid var(--terra);
+  font-size:15px;
+  padding:13px 22px;
+  box-shadow:0 4px 20px rgba(30,48,34,.25);
+}
+.btn-hero-wa:hover{background:#162619}
+ 
+.btn-hero-more{
+  background:transparent;
+  color:var(--green);
+  border:2px solid var(--green);
+  font-size:15px;
+  padding:13px 22px;
+}
+.btn-hero-more:hover{background:var(--green);color:#fff}
+.cta-btns{display:flex;flex-direction:column;align-items:center;gap:14px}
+.cta-btns-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center}
+.cta-phone{color:rgba(255,255,255,.8);font-family:'Manrope',sans-serif;font-size:16px;font-weight:700}
+.cta-logo{height:40px;width:auto;border-radius:8px}
+  font-size:13px;
+  font-weight:700;
+  color:var(--terra);
+  background:#1e3022;
+  border:1.5px solid var(--terra);
+  padding:8px 16px;
+  border-radius:50px;
+  transition:background var(--t);
+}
+.nav-call:hover{background:#162619}
+ 
+.wa-bar{
+  position:fixed;
+  bottom:32px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:999;
+  background:#1e3022;
+  border-radius:50px;
+  border:2px solid var(--terra);
+  box-shadow:0 10px 25px rgba(30,48,34,0.35);
+  white-space:nowrap;
+}
+.wa-bar a{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 22px;
+  color:var(--terra);
+  font-family:'Manrope',sans-serif;
+  font-size:14px;
+  font-weight:700;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.wa-bar a:hover{transform:scale(1.05)}
+.wa-bar svg{width:18px;height:18px;fill:var(--terra);flex-shrink:0}
+@media(min-width:768px){.wa-bar{display:none}}
 .btn-ghost{background:rgba(255,255,255,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,.3);font-size:14px;padding:13px 24px}
 .btn-ghost:hover{background:rgba(255,255,255,.22)}
  
@@ -40,8 +107,8 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
 .nav-logo{display:flex;align-items:center;text-decoration:none}
 .nav-logo img{height:38px;width:auto}
 .nav-right{display:flex;align-items:center;gap:12px}
-.nav-call{font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:var(--green);background:var(--sage);padding:8px 16px;border-radius:50px;transition:background var(--t)}
-.nav-call:hover{background:var(--sage-dark)}
+.nav-call{font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:var(--terra);background:#1e3022;border:1.5px solid var(--terra);padding:8px 16px;border-radius:50px;transition:background var(--t)}
+.nav-call:hover{background:#162619}
 .burger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:6px}
 .burger span{display:block;width:22px;height:2px;background:var(--green);border-radius:2px;transition:transform var(--t),opacity var(--t)}
 .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -64,22 +131,87 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
 .sheet-cta{margin-top:24px;display:flex;flex-direction:column;gap:10px}
 .sheet-cta .btn{width:100%;justify-content:center}
  
-/* HERO */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;transform:scale(1.05);transition:transform 8s ease}
-.hero-bg.loaded img{transform:scale(1)}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,35,22,.2) 0%,rgba(20,35,22,.1) 35%,rgba(20,35,22,.6) 65%,rgba(20,35,22,.88) 100%)}
-.hero-content{position:relative;z-index:1;padding:0 24px 56px;max-width:640px;width:100%}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;padding:7px 14px;border-radius:50px;margin-bottom:18px;border:1px solid rgba(255,255,255,.2)}
-.hero h1{font-size:clamp(34px,9vw,60px);font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-.03em;line-height:1.1}
-.hero-sub{font-size:16px;color:rgba(255,255,255,.82);margin-bottom:28px;line-height:1.65;max-width:380px}
-.hero-btns{display:flex;flex-direction:column;gap:10px}
-.hero-btns .btn{width:100%}
+/* HERO – split layout mobile + desktop */
+.hero{
+  background:#F7F1E6;
+  padding:32px 24px 40px;
+  overflow:hidden;
+  min-height:auto;
+  display:block;
+  position:relative;
+}
+.hero-bg{display:none}
+.hero-content{
+  position:relative;
+  z-index:1;
+  padding:0;
+  max-width:1080px;
+  margin:0 auto;
+}
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(47,74,52,0.08);
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  color:var(--green);
+  font-family:'Manrope',sans-serif;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.06em;
+  padding:7px 14px;
+  border-radius:50px;
+  margin-bottom:18px;
+  border:1px solid rgba(47,74,52,0.15);
+}
+.hero h1{
+  font-size:clamp(30px,8vw,56px);
+  font-weight:800;
+  color:var(--green);
+  margin-bottom:14px;
+  letter-spacing:-.03em;
+  line-height:1.1;
+}
+.hero-sub{
+  font-size:16px;
+  color:var(--muted);
+  margin-bottom:28px;
+  line-height:1.65;
+  max-width:480px;
+}
+.hero-btns{display:none}
 @media(min-width:768px){
-  .hero-content{padding:0 48px 80px}
-  .hero-btns{flex-direction:row}
+  .hero-btns{display:flex;flex-direction:row;align-items:flex-start;gap:12px;margin-top:8px}
   .hero-btns .btn{width:auto}
+}
+ 
+.hero-img-card{
+  border-radius:40px 40px 60% 60% / 40px 40px 120px 120px;
+  overflow:hidden;
+  margin-bottom:0;
+  box-shadow:0 8px 40px rgba(47,74,52,0.15);
+  position:relative;
+}
+.hero-img-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:80px;
+  background:linear-gradient(to bottom, #F7F1E6 0%, transparent 100%);
+  z-index:1;
+  pointer-events:none;
+}
+.hero-img-card img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  object-position:center 5%;
+  display:block;
+}
+@media(min-width:768px){
+  .hero-img-card{border-radius:40px 40px 0 0}
+  .hero-img-card img{height:480px;object-position:center 5%}
 }
  
 /* SECTIONS */
@@ -243,13 +375,42 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
 @media(min-width:768px){.footer-top{flex-direction:row}.footer-top>*{flex:1}footer{padding:56px 48px 80px}}
  
 /* WA BAR */
-.wa-bar{position:fixed;bottom:0;left:0;right:0;z-index:190;background:var(--terra)}
-.wa-bar a{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px 20px;color:#fff;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700}
-.wa-bar svg{width:22px;height:22px;fill:#fff;flex-shrink:0}
+.wa-bar{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:999;
+  background:var(--green);
+  border-radius:50px;
+  border:1.5px solid var(--terra);
+  box-shadow:0 10px 25px rgba(47,74,52,0.3);
+  white-space:nowrap;
+}
+.wa-bar a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 28px;
+  color:var(--terra);
+  font-family:'Manrope',sans-serif;
+  font-size:15px;
+  font-weight:700;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.wa-bar a:hover{
+  transform:scale(1.05);
+  box-shadow:0 15px 30px rgba(47,74,52,0.35);
+}
+.wa-bar svg{width:20px;height:20px;fill:var(--terra);flex-shrink:0}
 @media(min-width:768px){.wa-bar{display:none}}
-.wa-float{display:none;position:fixed;bottom:28px;right:28px;z-index:190;background:#25D366;color:#fff;font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;padding:14px 22px;border-radius:50px;align-items:center;gap:10px;box-shadow:0 4px 24px rgba(0,0,0,.18);transition:transform var(--t),box-shadow var(--t)}
-.wa-float svg{width:20px;height:20px;fill:#fff}
-.wa-float:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.22)}
+ 
+/* PULSE na tmavej zelenej */
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(200,121,74,.45)}70%{box-shadow:0 0 0 14px rgba(200,121,74,0)}100%{box-shadow:0 0 0 0 rgba(200,121,74,0)}}
+.btn-pulse{animation:pulse 2.5s infinite}
+.wa-float{display:none;position:fixed;bottom:28px;right:28px;z-index:190;background:#1e3022;color:var(--terra);border:2px solid var(--terra);font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;padding:13px 22px;border-radius:50px;align-items:center;gap:10px;box-shadow:0 4px 24px rgba(30,48,34,.3);transition:transform var(--t),box-shadow var(--t)}
+.wa-float svg{width:20px;height:20px;fill:var(--terra)}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(30,48,34,.4)}
 @media(min-width:768px){.wa-float{display:flex}}
  
 /* REVEAL */
@@ -301,19 +462,21 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
  
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" id="heroBg">
-    <picture>
-      <source media="(min-width:768px)" srcset="psi-hotel-bratislava.jpg">
-      <img src="psi-hotel-most-pri-bratislave.jpg" alt="Psí Raj – hotel pre miláčikov Most pri Bratislave">
-    </picture>
-  </div>
   <div class="hero-content reveal">
-    <span class="hero-badge">📍 Most pri Bratislave</span>
-    <h1>Váš miláčik<br>v dobrých rukách.</h1>
-    <p class="hero-sub">Domáce prostredie bez kotercov, neďaleko Bratislavy.</p>
-    <div class="hero-btns">
-      <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green btn-pulse">Napísať na WhatsApp</a>
-      <a href="#veronika" class="btn btn-ghost">Zistiť viac</a>
+    <div class="hero-text-col">
+      <span class="hero-badge">📍 Most pri Bratislave</span>
+      <h1>Doprajte im domov, kde sa cítia milovaní.</h1>
+      <p class="hero-sub">Rodinná starostlivosť bez kotercov — pokojné miesto len pár minút od Bratislavy.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-hero-wa btn-pulse">Napísať na WhatsApp</a>
+        <a href="#veronika" class="btn btn-hero-more">Zistiť viac</a>
+      </div>
+    </div>
+    <div class="hero-img-card">
+      <picture>
+        <source media="(min-width:768px)" srcset="psi-hotel-bratislava.jpg">
+        <img src="psi-hotel-most-pri-bratislave.jpg" alt="Pes a mačka na gauči – Psí Raj Most pri Bratislave">
+      </picture>
     </div>
   </div>
 </section>
@@ -337,7 +500,7 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
   <div class="veronika-card reveal">
     <img class="veronika-img" src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=700&auto=format&fit=crop&q=80" alt="Veronika – majiteľka Psí Raj">
     <div class="veronika-body">
-      <div class="veronika-name">Veronika</div>
+      <div class="veronika-name">Veronika <svg style="width:20px;height:20px;opacity:0.8;vertical-align:middle;margin-left:6px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 11C18.8807 11 20 9.88071 20 8.5C20 7.11929 18.8807 6 17.5 6C16.1193 6 15 7.11929 15 8.5C15 9.88071 16.1193 11 17.5 11Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.5 7C13.8807 7 15 5.88071 15 4.5C15 3.11929 13.8807 2 12.5 2C11.1193 2 10 3.11929 10 4.5C10 5.88071 11.1193 7 12.5 7Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 7C8.88071 7 10 5.88071 10 4.5C10 3.11929 8.88071 2 7.5 2C6.11929 2 5 3.11929 5 4.5C5 5.88071 6.11929 7 7.5 7Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 11C3.88071 11 5 9.88071 5 8.5C5 7.11929 3.88071 6 2.5 6C1.11929 6 0 7.11929 0 8.5C0 9.88071 1.11929 11 2.5 11Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 13C10 11.3431 11.3431 10 13 10H17C18.6569 10 20 11.3431 20 13V17C20 19.2091 18.2091 21 16 21H14C11.7909 21 10 19.2091 10 17V13Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="veronika-role">Majiteľka · 15+ rokov skúseností</div>
       <p class="veronika-quote">„Nie som len hotel pre psov, ale milovníčka zvierat – zvieratká žijú ako súčasť rodiny, výlučne v interiéri domu. Žiadne klietky ani koterce."</p>
       <div class="veronika-tags">
@@ -548,22 +711,28 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
   <div class="section-header reveal">
     <span class="eyebrow">Kde nás nájdete</span>
     <h2>Lokalita</h2>
-    <p>Most pri Bratislave – ľahko dostupné z celého regiónu.</p>
+    <p>Most pri Bratislave – napojenie na D1, D2 a D4.</p>
   </div>
   <div class="map-wrap">
     <div class="map-img reveal">
-      <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=900&auto=format&fit=crop&q=60" alt="Most pri Bratislave">
-      <div class="map-overlay">
-        <a href="https://maps.google.com/?q=Nálepková+302,+Most+pri+Bratislave" target="_blank" rel="noopener" class="map-btn">Otvoriť v Google Mapách</a>
-      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.8!2d17.1234!3d48.0123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c89b0b0b0b0b0%3A0x0!2sN%C3%A1lepkov%C3%A1+302%2C+Most+pri+Bratislave!5e0!3m2!1ssk!2ssk!4v1234567890"
+        width="100%"
+        height="240"
+        style="border:0;display:block;border-radius:var(--r)"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Psí Raj – Most pri Bratislave">
+      </iframe>
     </div>
     <div class="dist-grid">
-      <div class="dist reveal"><span class="dist-city">Bratislava</span><span class="dist-time">~20 min</span></div>
-      <div class="dist reveal"><span class="dist-city">Senec</span><span class="dist-time">~10 min</span></div>
+      <div class="dist reveal"><span class="dist-city">Bratislava</span><span class="dist-time">~15 min</span></div>
+      <div class="dist reveal"><span class="dist-city">Senec</span><span class="dist-time">~15 min</span></div>
       <div class="dist reveal"><span class="dist-city">Šamorín</span><span class="dist-time">~15 min</span></div>
-      <div class="dist reveal"><span class="dist-city">Trnava</span><span class="dist-time">~25 min</span></div>
-      <div class="dist reveal"><span class="dist-city">Pezinok</span><span class="dist-time">~25 min</span></div>
-      <div class="dist reveal"><span class="dist-city">Malacky</span><span class="dist-time">~30 min</span></div>
+      <div class="dist reveal"><span class="dist-city">Pezinok</span><span class="dist-time">~20 min</span></div>
+      <div class="dist reveal"><span class="dist-city">Trnava</span><span class="dist-time">~30 min</span></div>
+      <div class="dist reveal"><span class="dist-city">Stupava</span><span class="dist-time">~30 min</span></div>
     </div>
   </div>
 </section>
@@ -604,7 +773,10 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     <h2 style="color:#fff">Chcete ubytovať miláčika?</h2>
     <p>Napíšte nám na WhatsApp – odpovieme rýchlo a dohodneme všetko osobne.</p>
     <div class="cta-btns">
-      <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green btn-pulse">Napísať na WhatsApp</a>
+      <div class="cta-btns-row">
+        <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green btn-pulse">Napísať na WhatsApp</a>
+        <img src="logo_mobil.png" alt="Psí Raj" class="cta-logo">
+      </div>
       <a href="tel:+421948480013" class="cta-phone">0948 480 013</a>
     </div>
   </div>
@@ -616,7 +788,8 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     <div class="footer-top">
       <div>
         <img src="logo_mobil.png" alt="Psí Raj" style="height:48px;width:auto;margin-bottom:12px">
-        <p class="footer-tagline">Starostlivosť, kde sa psy cítia ako v raji.</p>
+        <p class="footer-tagline">Psí hotel Bratislava</p>
+        <p style="font-size:13px;color:rgba(255,255,255,.4);margin-top:4px">Váš miláčik doma. Aj keď ste preč.</p>
       </div>
       <div class="footer-col">
         <h4>Navigácia</h4>
@@ -637,6 +810,7 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
       </div>
     </div>
     <div class="footer-bottom">
+      <svg class="paw-icon" style="width:32px;height:32px;opacity:0.6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 11C18.8807 11 20 9.88071 20 8.5C20 7.11929 18.8807 6 17.5 6C16.1193 6 15 7.11929 15 8.5C15 9.88071 16.1193 11 17.5 11Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.5 7C13.8807 7 15 5.88071 15 4.5C15 3.11929 13.8807 2 12.5 2C11.1193 2 10 3.11929 10 4.5C10 5.88071 11.1193 7 12.5 7Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 7C8.88071 7 10 5.88071 10 4.5C10 3.11929 8.88071 2 7.5 2C6.11929 2 5 3.11929 5 4.5C5 5.88071 6.11929 7 7.5 7Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 11C3.88071 11 5 9.88071 5 8.5C5 7.11929 3.88071 6 2.5 6C1.11929 6 0 7.11929 0 8.5C0 9.88071 1.11929 11 2.5 11Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 13C10 11.3431 11.3431 10 13 10H17C18.6569 10 20 11.3431 20 13V17C20 19.2091 18.2091 21 16 21H14C11.7909 21 10 19.2091 10 17V13Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <p>© 2026 Psí Raj – Animio s.r.o. Všetky práva vyhradené.</p>
       <div class="footer-legal"><a href="#">Ochrana osobných údajov</a><a href="#">Cookies</a></div>
     </div>
@@ -661,17 +835,6 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
 // Nav shadow
 window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10);
-});
- 
-// Hero parallax
-window.addEventListener('scroll',()=>{
-  const hero=document.getElementById('heroBg');
-  if(hero){hero.style.transform=`translateY(${window.scrollY*0.3}px)`;}
-});
- 
-// Hero image load
-window.addEventListener('load',()=>{
-  document.getElementById('heroBg').classList.add('loaded');
 });
  
 // Burger / bottom sheet
@@ -757,4 +920,3 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLb();closeMenu
 </script>
 </body>
 </html>
- 
