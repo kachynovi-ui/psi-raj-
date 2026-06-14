@@ -21,11 +21,11 @@ img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
 h1,h2,h3,h4{font-family:'Manrope',sans-serif;color:var(--green);line-height:1.15}
 .eyebrow{display:block;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
-
+ 
 /* CURVE DIVIDER */
 .curve{display:block;overflow:hidden;line-height:0;margin-bottom:-1px}
 .curve svg{display:block;width:100%}
-
+ 
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;padding:15px 28px;border-radius:50px;border:none;cursor:pointer;transition:transform var(--t),box-shadow var(--t),background var(--t);white-space:nowrap}
 .btn:hover{transform:translateY(-2px)}
@@ -33,13 +33,12 @@ h1,h2,h3,h4{font-family:'Manrope',sans-serif;color:var(--green);line-height:1.15
 .btn-green:hover{background:#2d9040;box-shadow:0 8px 28px rgba(56,168,72,.35)}
 .btn-ghost{background:rgba(255,255,255,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,.3);font-size:14px;padding:13px 24px}
 .btn-ghost:hover{background:rgba(255,255,255,.22)}
-
+ 
 /* NAV */
-nav{position:sticky;top:0;z-index:200;background:var(--white);height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;transition:box-shadow var(--t)}
+nav{position:sticky;top:0;z-index:200;background:#F7F1E6;height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;transition:box-shadow var(--t)}
 nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
-.nav-logo{font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:var(--green);display:flex;align-items:center;gap:10px}
-.nav-logo-mark{width:34px;height:34px;background:var(--sage);border-radius:10px;overflow:hidden;flex-shrink:0}
-.nav-logo-mark img{width:100%;height:100%;object-fit:cover}
+.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-logo img{height:38px;width:auto}
 .nav-right{display:flex;align-items:center;gap:12px}
 .nav-call{font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:var(--green);background:var(--sage);padding:8px 16px;border-radius:50px;transition:background var(--t)}
 .nav-call:hover{background:var(--sage-dark)}
@@ -52,7 +51,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
 .nav-links-desktop a{font-family:'Manrope',sans-serif;font-size:14px;font-weight:600;color:var(--text);transition:color var(--t)}
 .nav-links-desktop a:hover{color:var(--green)}
 @media(min-width:768px){nav{padding:0 48px}.nav-links-desktop{display:flex}.burger{display:none}}
-
+ 
 /* BOTTOM SHEET MENU */
 .menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,0);z-index:150;pointer-events:none;transition:background .3s}
 .menu-overlay.open{background:rgba(0,0,0,.5);pointer-events:all}
@@ -64,7 +63,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
 .sheet-links a:hover{color:var(--green)}
 .sheet-cta{margin-top:24px;display:flex;flex-direction:column;gap:10px}
 .sheet-cta .btn{width:100%;justify-content:center}
-
+ 
 /* HERO */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0}
@@ -82,7 +81,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
   .hero-btns{flex-direction:row}
   .hero-btns .btn{width:auto}
 }
-
+ 
 /* SECTIONS */
 .section{padding:72px 20px}
 .section-sage{background:var(--sage)}
@@ -92,7 +91,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
 .section-header h2{font-size:clamp(26px,5vw,40px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
 .section-header p{font-size:16px;color:var(--muted);max-width:480px;margin:0 auto}
 @media(min-width:768px){.section{padding:80px 48px}}
-
+ 
 /* VERONIKA */
 .veronika-card{background:var(--white);border-radius:var(--r);overflow:hidden;max-width:860px;margin:0 auto;box-shadow:0 4px 32px rgba(47,74,52,.08)}
 .veronika-img{width:100%;height:280px;object-fit:cover;object-position:center 20%}
@@ -107,7 +106,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
   .veronika-img{height:100%;min-height:360px}
   .veronika-body{padding:48px 40px}
 }
-
+ 
 /* USP */
 .usp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:860px;margin:0 auto}
 .usp-card{background:var(--white);border-radius:var(--r);padding:28px 22px;transition:transform var(--t),box-shadow var(--t)}
@@ -116,7 +115,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
 .usp-card h3{font-size:16px;font-weight:700;margin-bottom:8px}
 .usp-card p{font-size:13px;color:var(--muted);line-height:1.55}
 @media(min-width:768px){.usp-grid{grid-template-columns:repeat(4,1fr);max-width:960px}}
-
+ 
 /* KROKY */
 .steps-wrap{max-width:680px;margin:0 auto;display:flex;flex-direction:column}
 .step{display:flex;gap:20px;align-items:flex-start;position:relative}
@@ -125,7 +124,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
 .step-body{background:var(--sage);border-radius:var(--rs);padding:24px;flex:1;margin-bottom:16px}
 .step-body h3{font-size:17px;font-weight:700;margin-bottom:8px}
 .step-body p{font-size:14px;color:var(--muted);line-height:1.6}
-
+ 
 /* SLUZBY – horizontal snap scroll */
 .sluzby-scroll{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 20px 20px;scrollbar-width:none;max-width:100%}
 .sluzby-scroll::-webkit-scrollbar{display:none}
@@ -143,14 +142,27 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
   .sluzby-scroll{padding:0 48px 20px;justify-content:center}
   .sluzba{flex:0 0 280px}
 }
-
-/* TRUST PÁS */
-.trust-wrap{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:16px}
-.trust-item{border-left:3px solid var(--green);padding:20px 20px 20px 24px;background:var(--white);border-radius:0 var(--rs) var(--rs) 0}
-.trust-item h3{font-family:'Manrope',sans-serif;font-size:16px;font-weight:700;color:var(--green);margin-bottom:6px}
-.trust-item p{font-size:14px;color:var(--muted);line-height:1.6}
+ 
+/* PULSE na WA tlačidlo */
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(56,168,72,.45)}70%{box-shadow:0 0 0 14px rgba(56,168,72,0)}100%{box-shadow:0 0 0 0 rgba(56,168,72,0)}}
+.btn-pulse{animation:pulse 2.5s infinite}
+ 
+/* KROKY – progress animácia */
+.step-num{transition:background .4s ease,box-shadow .4s ease}
+.step-num.done{background:var(--green-cta);box-shadow:0 0 0 4px rgba(56,168,72,.2)}
+.step-body{transition:border-color .4s ease}
+ 
+/* TRUST */
+.trust-wrap{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:20px}
+.trust-item{border-left:3px solid var(--green);padding:24px 24px 24px 28px;background:var(--white);border-radius:0 var(--rs) var(--rs) 0;display:flex;align-items:center;gap:20px}
+.trust-silhouette{width:60px;height:60px;object-fit:contain;flex-shrink:0;opacity:.85}
+.trust-text h3{font-family:'Manrope',sans-serif;font-size:17px;font-weight:700;color:var(--green);margin-bottom:6px}
+.trust-text p{font-size:14px;color:var(--muted);line-height:1.6}
 @media(min-width:640px){.trust-wrap{grid-template-columns:1fr 1fr}}
-
+ 
+/* FAQ krémová */
+.faq-item{background:#F7F1E6;border-radius:var(--rs);overflow:hidden}
+ 
 /* RECENZIE */
 .rating-hero{text-align:center;margin-bottom:40px}
 .rating-num{font-family:'Manrope',sans-serif;font-size:72px;font-weight:800;color:var(--green);line-height:1;letter-spacing:-.04em}
@@ -166,7 +178,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
 .link-underline{font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:var(--green);border-bottom:2px solid var(--sage-dark);padding-bottom:2px;transition:border-color var(--t)}
 .link-underline:hover{border-color:var(--green)}
 @media(min-width:640px){.reviews-grid{flex-direction:row}.review{flex:1}}
-
+ 
 /* GALERIA – masonry 2 stĺpce, 6 fotiek */
 .gallery-grid{columns:2;gap:10px;max-width:960px;margin:0 auto}
 .gallery-item{break-inside:avoid;margin-bottom:10px;border-radius:var(--rs);overflow:hidden;cursor:pointer;position:relative}
@@ -176,14 +188,14 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
 .gallery-item:hover .goverlay{opacity:1}
 .goverlay svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round}
 @media(min-width:640px){.gallery-grid{columns:3}}
-
+ 
 /* LIGHTBOX */
 .lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;align-items:center;justify-content:center;padding:20px}
 .lb.open{display:flex}
 .lb-inner{position:relative;max-width:840px;width:100%}
 .lb-inner img{width:100%;border-radius:var(--r);max-height:88vh;object-fit:contain}
 .lb-close{position:fixed;top:16px;right:20px;width:40px;height:40px;background:var(--white);border:none;border-radius:50%;cursor:pointer;font-size:18px;font-weight:700;color:var(--green);display:flex;align-items:center;justify-content:center}
-
+ 
 /* LOKALITA */
 .map-wrap{max-width:860px;margin:0 auto}
 .map-img{border-radius:var(--r);overflow:hidden;height:240px;margin-bottom:20px;position:relative;cursor:pointer}
@@ -195,7 +207,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
 .dist-city{font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:var(--green)}
 .dist-time{font-size:13px;color:var(--muted);font-weight:500}
 @media(min-width:640px){.dist-grid{grid-template-columns:repeat(3,1fr)}}
-
+ 
 /* FAQ */
 .faq-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
 .faq-item{background:var(--white);border-radius:var(--rs);overflow:hidden;box-shadow:0 2px 12px rgba(47,74,52,.06)}
@@ -205,7 +217,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
 .faq-item.open .faq-a{max-height:200px}
 .faq-a-inner{padding:0 22px 20px;font-size:14px;color:var(--muted);line-height:1.7}
-
+ 
 /* CTA */
 .cta-block{background:var(--green);border-radius:var(--r);padding:60px 28px;text-align:center;position:relative;overflow:hidden;max-width:960px;margin:0 auto}
 .cta-block h2{color:#fff;font-size:clamp(26px,5vw,40px);font-weight:800;margin-bottom:14px;letter-spacing:-.02em}
@@ -214,7 +226,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
 .cta-btns .btn-green{font-size:16px;padding:16px 32px}
 .cta-phone{color:rgba(255,255,255,.8);font-family:'Manrope',sans-serif;font-size:16px;font-weight:700}
 @media(min-width:640px){.cta-btns{flex-direction:row;justify-content:center}.cta-block{padding:80px 48px;margin:0 24px}}
-
+ 
 /* FOOTER */
 footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
 .footer-inner{max-width:960px;margin:0 auto}
@@ -229,7 +241,7 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
 .footer-legal a{font-size:12px;color:rgba(255,255,255,.28);transition:color var(--t)}
 .footer-legal a:hover{color:rgba(255,255,255,.7)}
 @media(min-width:768px){.footer-top{flex-direction:row}.footer-top>*{flex:1}footer{padding:56px 48px 80px}}
-
+ 
 /* WA BAR */
 .wa-bar{position:fixed;bottom:0;left:0;right:0;z-index:190;background:var(--terra)}
 .wa-bar a{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px 20px;color:#fff;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700}
@@ -239,7 +251,7 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
 .wa-float svg{width:20px;height:20px;fill:#fff}
 .wa-float:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.22)}
 @media(min-width:768px){.wa-float{display:flex}}
-
+ 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:none}
@@ -249,14 +261,11 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">
-    <div class="nav-logo-mark">
-      <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=80&auto=format&fit=crop&q=60" alt="Psí Raj">
-    </div>
-    Psí Raj
+    <img src="logo_mobil.png" alt="Psí Raj – Hotel pre miláčikov">
   </a>
   <ul class="nav-links-desktop">
     <li><a href="#veronika">O nás</a></li>
@@ -272,7 +281,7 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     </button>
   </div>
 </nav>
-
+ 
 <!-- BOTTOM SHEET -->
 <div class="menu-overlay" id="overlay"></div>
 <div class="bottom-sheet" id="sheet">
@@ -289,23 +298,26 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     <a href="tel:+421948480013" class="btn" style="background:var(--sage);color:var(--green)" onclick="closeMenu()">Volať: 0948 480 013</a>
   </div>
 </div>
-
+ 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg" id="heroBg">
-    <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1200&auto=format&fit=crop&q=85" alt="Pes a mačka – Psí Raj Most pri Bratislave">
+    <picture>
+      <source media="(min-width:768px)" srcset="psi-hotel-bratislava.jpg">
+      <img src="psi-hotel-most-pri-bratislave.jpg" alt="Psí Raj – hotel pre miláčikov Most pri Bratislave">
+    </picture>
   </div>
   <div class="hero-content reveal">
     <span class="hero-badge">📍 Most pri Bratislave</span>
     <h1>Váš miláčik<br>v dobrých rukách.</h1>
     <p class="hero-sub">Domáce prostredie bez kotercov, neďaleko Bratislavy.</p>
     <div class="hero-btns">
-      <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green">Napísať na WhatsApp</a>
+      <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green btn-pulse">Napísať na WhatsApp</a>
       <a href="#veronika" class="btn btn-ghost">Zistiť viac</a>
     </div>
   </div>
 </section>
-
+ 
 <!-- CURVE: hero → white -->
 <div class="curve" style="background:var(--white)">
   <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60">
@@ -315,7 +327,7 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     <path d="M0,80 C360,30 1080,60 1440,40 L1440,80 Z" fill="#ffffff"/>
   </svg>
 </div>
-
+ 
 <!-- VERONIKA – white -->
 <section class="section section-white" id="veronika" style="padding-top:20px">
   <div class="section-header reveal">
@@ -330,21 +342,21 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
       <p class="veronika-quote">„Nie som len hotel pre psov, ale milovníčka zvierat – zvieratká žijú ako súčasť rodiny, výlučne v interiéri domu. Žiadne klietky ani koterce."</p>
       <div class="veronika-tags">
         <span class="vtag">Domáce prostredie</span>
-        <span class="vtag">Foto &amp; video každý deň</span>
+        <span class="vtag">Foto &amp; video</span>
         <span class="vtag">Individuálny prístup</span>
         <span class="vtag">Veterinár na telefóne</span>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- CURVE: white → sage -->
 <div class="curve" style="background:var(--sage)">
   <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
     <path d="M0,0 C360,70 1080,10 1440,50 L1440,70 L0,70 Z" fill="#ffffff"/>
   </svg>
 </div>
-
+ 
 <!-- USP – sage -->
 <section class="section section-sage" style="padding-top:20px" id="usp">
   <div class="section-header reveal">
@@ -358,14 +370,14 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     <div class="usp-card reveal reveal-delay-3"><div class="usp-num">04</div><h3>Max 6 zvierat</h3><p>Nikdy preplnené – každý dostane plnú pozornosť.</p></div>
   </div>
 </section>
-
+ 
 <!-- CURVE: sage → white -->
 <div class="curve" style="background:var(--white)">
   <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
     <path d="M0,0 C480,70 960,20 1440,50 L1440,70 L0,70 Z" fill="#DCE8D6"/>
   </svg>
 </div>
-
+ 
 <!-- AKO FUNGUJE – white -->
 <section class="section section-white" id="ako" style="padding-top:20px">
   <div class="section-header reveal">
@@ -388,14 +400,14 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     </div>
   </div>
 </section>
-
+ 
 <!-- CURVE: white → sage -->
 <div class="curve" style="background:var(--sage)">
   <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
     <path d="M0,20 C360,70 1080,0 1440,50 L1440,70 L0,70 Z" fill="#ffffff"/>
   </svg>
 </div>
-
+ 
 <!-- SLUZBY – sage -->
 <section class="section section-sage" id="sluzby" style="padding-top:20px;padding-left:0;padding-right:0">
   <div class="section-header reveal" style="padding:0 20px">
@@ -428,14 +440,14 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     <div class="sluzby-dot"></div>
   </div>
 </section>
-
+ 
 <!-- CURVE: sage → white -->
 <div class="curve" style="background:var(--white)">
   <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
     <path d="M0,0 C600,70 900,20 1440,40 L1440,70 L0,70 Z" fill="#DCE8D6"/>
   </svg>
 </div>
-
+ 
 <!-- RECENZIE – white -->
 <section class="section section-white" id="recenzie" style="padding-top:20px">
   <div class="section-header reveal">
@@ -465,14 +477,14 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     <a href="https://www.google.com/maps" class="link-underline" target="_blank" rel="noopener">Zobraziť všetky recenzie na Google →</a>
   </div>
 </section>
-
+ 
 <!-- CURVE: white → sage -->
 <div class="curve" style="background:var(--sage)">
   <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
     <path d="M0,30 C480,70 960,10 1440,50 L1440,70 L0,70 Z" fill="#ffffff"/>
   </svg>
 </div>
-
+ 
 <!-- GALERIA – sage, 6 fotiek, masonry -->
 <section class="section section-sage" id="galeria" style="padding-top:20px">
   <div class="section-header reveal">
@@ -489,42 +501,48 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     <div class="gallery-item reveal" onclick="openLb(this)"><img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=500&auto=format&fit=crop&q=75" alt=""><div class="goverlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
   </div>
 </section>
-
+ 
 <div class="lb" id="lb" onclick="closeLb()">
   <div class="lb-inner" onclick="event.stopPropagation()">
     <button class="lb-close" onclick="closeLb()">✕</button>
     <img id="lb-img" src="" alt="">
   </div>
 </div>
-
+ 
 <!-- CURVE: sage → white -->
 <div class="curve" style="background:var(--white)">
   <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
     <path d="M0,0 C360,70 1080,20 1440,50 L1440,70 L0,70 Z" fill="#DCE8D6"/>
   </svg>
 </div>
-
+ 
 <!-- TRUST PÁS – white -->
 <section class="section section-white" id="trust" style="padding-top:20px;padding-bottom:40px">
   <div class="trust-wrap">
     <div class="trust-item reveal">
-      <h3>Očkovanie povinné</h3>
-      <p>Zdravie každého miláčika je pre nás na prvom mieste.</p>
+      <img src="pes.png" alt="Pes" class="trust-silhouette">
+      <div class="trust-text">
+        <h3>Očkovanie povinné</h3>
+        <p>Zdravie každého miláčika je pre nás na prvom mieste.</p>
+      </div>
     </div>
     <div class="trust-item reveal reveal-delay-1">
-      <h3>Veterinár na telefóne</h3>
-      <p>Vždy dostupný, vždy blízko.</p>
+      <img src="macka.png" alt="Mačka" class="trust-silhouette">
+      <div class="trust-text">
+        <h3>Veterinár na telefóne</h3>
+        <p>Vždy dostupný, vždy blízko.</p>
+      </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- CURVE: white → sage -->
 <div class="curve" style="background:var(--sage)">
   <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
     <path d="M0,20 C480,70 960,10 1440,45 L1440,70 L0,70 Z" fill="#ffffff"/>
   </svg>
 </div>
-
+ 
 <!-- LOKALITA – sage -->
 <section class="section section-sage" id="lokalita" style="padding-top:20px">
   <div class="section-header reveal">
@@ -549,14 +567,14 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     </div>
   </div>
 </section>
-
+ 
 <!-- CURVE: sage → white -->
 <div class="curve" style="background:var(--white)">
   <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
     <path d="M0,10 C600,70 840,20 1440,40 L1440,70 L0,70 Z" fill="#DCE8D6"/>
   </svg>
 </div>
-
+ 
 <!-- FAQ – white -->
 <section class="section section-white" id="faq" style="padding-top:20px">
   <div class="section-header reveal">
@@ -571,14 +589,14 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Čo ak bude potrebovať veterinára?<span class="faq-arr">▼</span></button><div class="faq-a"><div class="faq-a-inner">V prípade zdravotných ťažkostí vás ihneď kontaktujeme. Spolupracujeme s miestnym veterinárom dostupným na telefóne.</div></div></div>
   </div>
 </section>
-
+ 
 <!-- CURVE: white → dark -->
 <div class="curve" style="background:var(--green)">
   <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
     <path d="M0,20 C480,70 960,10 1440,45 L1440,70 L0,70 Z" fill="#ffffff"/>
   </svg>
 </div>
-
+ 
 <!-- CTA – dark green -->
 <section class="section section-dark" style="padding-top:20px">
   <div class="cta-block reveal">
@@ -586,18 +604,18 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     <h2 style="color:#fff">Chcete ubytovať miláčika?</h2>
     <p>Napíšte nám na WhatsApp – odpovieme rýchlo a dohodneme všetko osobne.</p>
     <div class="cta-btns">
-      <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green">Napísať na WhatsApp</a>
+      <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green btn-pulse">Napísať na WhatsApp</a>
       <a href="tel:+421948480013" class="cta-phone">0948 480 013</a>
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div class="footer-brand">Psí Raj</div>
+        <img src="logo_mobil.png" alt="Psí Raj" style="height:48px;width:auto;margin-bottom:12px">
         <p class="footer-tagline">Starostlivosť, kde sa psy cítia ako v raji.</p>
       </div>
       <div class="footer-col">
@@ -624,7 +642,7 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     </div>
   </div>
 </footer>
-
+ 
 <!-- WA BAR MOBILE -->
 <div class="wa-bar">
   <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika.">
@@ -632,30 +650,30 @@ footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
     Napísať na WhatsApp
   </a>
 </div>
-
+ 
 <!-- WA FLOAT DESKTOP -->
 <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="wa-float" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   Napísať na WhatsApp
 </a>
-
+ 
 <script>
 // Nav shadow
 window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10);
 });
-
+ 
 // Hero parallax
 window.addEventListener('scroll',()=>{
   const hero=document.getElementById('heroBg');
   if(hero){hero.style.transform=`translateY(${window.scrollY*0.3}px)`;}
 });
-
+ 
 // Hero image load
 window.addEventListener('load',()=>{
   document.getElementById('heroBg').classList.add('loaded');
 });
-
+ 
 // Burger / bottom sheet
 const burger=document.getElementById('burger');
 const sheet=document.getElementById('sheet');
@@ -664,13 +682,13 @@ function openMenu(){burger.classList.add('open');sheet.classList.add('open');ove
 function closeMenu(){burger.classList.remove('open');sheet.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}
 burger.addEventListener('click',()=>{sheet.classList.contains('open')?closeMenu():openMenu();});
 overlay.addEventListener('click',closeMenu);
-
+ 
 // Scroll reveal
 const obs=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
 },{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
+ 
 // Sluzby snap scroll + active card
 const scroll=document.getElementById('sluzbyScroll');
 const cards=scroll.querySelectorAll('.sluzba');
@@ -693,15 +711,38 @@ dots.forEach((d,i)=>{
     cards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
   });
 });
-
-// FAQ
+ 
+// Kroky – postupné sfarbenie
+const stepNums = document.querySelectorAll('.step-num');
+const stepsObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      const idx = Array.from(stepNums).indexOf(e.target);
+      setTimeout(() => { e.target.classList.add('done'); }, idx * 400);
+      stepsObs.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.8});
+stepNums.forEach(s => stepsObs.observe(s));
+ 
+// Recenzie – mobile len 1
+function handleReviews() {
+  const reviews = document.querySelectorAll('.review');
+  if(window.innerWidth < 640 && reviews.length > 1) {
+    reviews[1].style.display = 'none';
+  } else {
+    reviews.forEach(r => r.style.display = '');
+  }
+}
+handleReviews();
+window.addEventListener('resize', handleReviews);
 function toggleFaq(btn){
   const item=btn.closest('.faq-item');
   const isOpen=item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
   if(!isOpen)item.classList.add('open');
 }
-
+ 
 // Lightbox
 function openLb(el){
   document.getElementById('lb-img').src=el.querySelector('img').src;
@@ -716,3 +757,4 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLb();closeMenu
 </script>
 </body>
 </html>
+ 
