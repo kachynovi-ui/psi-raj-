@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psí Raj – Hotel pre miláčikov | Most pri Bratislave</title>
+<meta name="description" content="Rodinný hotel pre psov a mačky neďaleko Bratislavy. Žiadne klietky, domáce prostredie, 8 árový výbeh. Veronika – 15 rokov skúseností.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sage:#DCE8D6;--sage-dark:#c5dbbf;
+  --green:#2F4A34;--green-cta:#38A848;--terra:#C8794A;
+  --white:#FFFFFF;--text:#2A2A24;--muted:#5a6e5d;
+  --r:18px;--rs:12px;--t:0.3s ease;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+h1,h2,h3,h4{font-family:'Manrope',sans-serif;color:var(--green);line-height:1.15}
+.eyebrow{display:block;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
+
+/* CURVE DIVIDER */
+.curve{display:block;overflow:hidden;line-height:0;margin-bottom:-1px}
+.curve svg{display:block;width:100%}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;padding:15px 28px;border-radius:50px;border:none;cursor:pointer;transition:transform var(--t),box-shadow var(--t),background var(--t);white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-green{background:var(--green-cta);color:#fff;box-shadow:0 4px 20px rgba(56,168,72,.25)}
+.btn-green:hover{background:#2d9040;box-shadow:0 8px 28px rgba(56,168,72,.35)}
+.btn-ghost{background:rgba(255,255,255,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,.3);font-size:14px;padding:13px 24px}
+.btn-ghost:hover{background:rgba(255,255,255,.22)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--white);height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;transition:box-shadow var(--t)}
+nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
+.nav-logo{font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:var(--green);display:flex;align-items:center;gap:10px}
+.nav-logo-mark{width:34px;height:34px;background:var(--sage);border-radius:10px;overflow:hidden;flex-shrink:0}
+.nav-logo-mark img{width:100%;height:100%;object-fit:cover}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-call{font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:var(--green);background:var(--sage);padding:8px 16px;border-radius:50px;transition:background var(--t)}
+.nav-call:hover{background:var(--sage-dark)}
+.burger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:6px}
+.burger span{display:block;width:22px;height:2px;background:var(--green);border-radius:2px;transition:transform var(--t),opacity var(--t)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-links-desktop{display:none;list-style:none;gap:28px;align-items:center}
+.nav-links-desktop a{font-family:'Manrope',sans-serif;font-size:14px;font-weight:600;color:var(--text);transition:color var(--t)}
+.nav-links-desktop a:hover{color:var(--green)}
+@media(min-width:768px){nav{padding:0 48px}.nav-links-desktop{display:flex}.burger{display:none}}
+
+/* BOTTOM SHEET MENU */
+.menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,0);z-index:150;pointer-events:none;transition:background .3s}
+.menu-overlay.open{background:rgba(0,0,0,.5);pointer-events:all}
+.bottom-sheet{position:fixed;bottom:0;left:0;right:0;z-index:160;background:var(--white);border-radius:24px 24px 0 0;padding:12px 24px 48px;transform:translateY(100%);transition:transform .35s cubic-bezier(.32,.72,0,1);box-shadow:0 -8px 40px rgba(0,0,0,.15)}
+.bottom-sheet.open{transform:translateY(0)}
+.sheet-handle{width:40px;height:4px;background:#ddd;border-radius:2px;margin:0 auto 24px}
+.sheet-links{list-style:none;display:flex;flex-direction:column;gap:4px}
+.sheet-links a{display:block;font-family:'Manrope',sans-serif;font-size:18px;font-weight:700;color:var(--text);padding:14px 0;border-bottom:1px solid #f0f0f0;transition:color var(--t)}
+.sheet-links a:hover{color:var(--green)}
+.sheet-cta{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+.sheet-cta .btn{width:100%;justify-content:center}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;transform:scale(1.05);transition:transform 8s ease}
+.hero-bg.loaded img{transform:scale(1)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,35,22,.2) 0%,rgba(20,35,22,.1) 35%,rgba(20,35,22,.6) 65%,rgba(20,35,22,.88) 100%)}
+.hero-content{position:relative;z-index:1;padding:0 24px 56px;max-width:640px;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;padding:7px 14px;border-radius:50px;margin-bottom:18px;border:1px solid rgba(255,255,255,.2)}
+.hero h1{font-size:clamp(34px,9vw,60px);font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-.03em;line-height:1.1}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.82);margin-bottom:28px;line-height:1.65;max-width:380px}
+.hero-btns{display:flex;flex-direction:column;gap:10px}
+.hero-btns .btn{width:100%}
+@media(min-width:768px){
+  .hero-content{padding:0 48px 80px}
+  .hero-btns{flex-direction:row}
+  .hero-btns .btn{width:auto}
+}
+
+/* SECTIONS */
+.section{padding:72px 20px}
+.section-sage{background:var(--sage)}
+.section-white{background:var(--white)}
+.section-dark{background:var(--green)}
+.section-header{text-align:center;margin-bottom:48px}
+.section-header h2{font-size:clamp(26px,5vw,40px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+.section-header p{font-size:16px;color:var(--muted);max-width:480px;margin:0 auto}
+@media(min-width:768px){.section{padding:80px 48px}}
+
+/* VERONIKA */
+.veronika-card{background:var(--white);border-radius:var(--r);overflow:hidden;max-width:860px;margin:0 auto;box-shadow:0 4px 32px rgba(47,74,52,.08)}
+.veronika-img{width:100%;height:280px;object-fit:cover;object-position:center 20%}
+.veronika-body{padding:32px 28px}
+.veronika-name{font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:var(--green);margin-bottom:4px}
+.veronika-role{font-size:13px;font-weight:600;color:var(--terra);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+.veronika-quote{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:24px;font-style:italic;border-left:3px solid var(--sage-dark);padding-left:16px}
+.veronika-tags{display:flex;flex-wrap:wrap;gap:8px}
+.vtag{background:var(--sage);color:var(--green);font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;padding:7px 16px;border-radius:50px}
+@media(min-width:768px){
+  .veronika-card{display:grid;grid-template-columns:320px 1fr}
+  .veronika-img{height:100%;min-height:360px}
+  .veronika-body{padding:48px 40px}
+}
+
+/* USP */
+.usp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:860px;margin:0 auto}
+.usp-card{background:var(--white);border-radius:var(--r);padding:28px 22px;transition:transform var(--t),box-shadow var(--t)}
+.usp-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(47,74,52,.12)}
+.usp-num{font-family:'Manrope',sans-serif;font-size:40px;font-weight:800;color:var(--sage-dark);line-height:1;margin-bottom:12px;letter-spacing:-.03em}
+.usp-card h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.usp-card p{font-size:13px;color:var(--muted);line-height:1.55}
+@media(min-width:768px){.usp-grid{grid-template-columns:repeat(4,1fr);max-width:960px}}
+
+/* KROKY */
+.steps-wrap{max-width:680px;margin:0 auto;display:flex;flex-direction:column}
+.step{display:flex;gap:20px;align-items:flex-start;position:relative}
+.step:not(:last-child)::after{content:'';position:absolute;left:19px;top:44px;width:2px;height:calc(100% + 4px);background:var(--sage-dark)}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--green);color:#fff;font-family:'Manrope',sans-serif;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1}
+.step-body{background:var(--sage);border-radius:var(--rs);padding:24px;flex:1;margin-bottom:16px}
+.step-body h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.step-body p{font-size:14px;color:var(--muted);line-height:1.6}
+
+/* SLUZBY – horizontal snap scroll */
+.sluzby-scroll{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 20px 20px;scrollbar-width:none;max-width:100%}
+.sluzby-scroll::-webkit-scrollbar{display:none}
+.sluzba{flex:0 0 82vw;max-width:320px;scroll-snap-align:center;background:var(--white);border-radius:var(--r);overflow:hidden;transition:transform var(--t),box-shadow var(--t)}
+.sluzba.active{transform:scale(1.03);box-shadow:0 16px 48px rgba(47,74,52,.18)}
+.sluzba img{width:100%;height:200px;object-fit:cover;transition:transform .4s ease}
+.sluzba:hover img{transform:scale(1.04)}
+.sluzba-body{padding:20px}
+.sluzba-body h3{font-size:17px;font-weight:700;margin-bottom:8px;color:var(--green)}
+.sluzba-body p{font-size:13px;color:var(--muted);line-height:1.6}
+.sluzby-dots{display:flex;justify-content:center;gap:8px;margin-top:20px}
+.sluzby-dot{width:8px;height:8px;border-radius:50%;background:var(--sage-dark);transition:all var(--t);cursor:pointer}
+.sluzby-dot.active{background:var(--green);width:24px;border-radius:4px}
+@media(min-width:768px){
+  .sluzby-scroll{padding:0 48px 20px;justify-content:center}
+  .sluzba{flex:0 0 280px}
+}
+
+/* TRUST PÁS */
+.trust-wrap{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:16px}
+.trust-item{border-left:3px solid var(--green);padding:20px 20px 20px 24px;background:var(--white);border-radius:0 var(--rs) var(--rs) 0}
+.trust-item h3{font-family:'Manrope',sans-serif;font-size:16px;font-weight:700;color:var(--green);margin-bottom:6px}
+.trust-item p{font-size:14px;color:var(--muted);line-height:1.6}
+@media(min-width:640px){.trust-wrap{grid-template-columns:1fr 1fr}}
+
+/* RECENZIE */
+.rating-hero{text-align:center;margin-bottom:40px}
+.rating-num{font-family:'Manrope',sans-serif;font-size:72px;font-weight:800;color:var(--green);line-height:1;letter-spacing:-.04em}
+.rating-stars{color:#f5a623;font-size:22px;letter-spacing:3px;margin:8px 0 6px}
+.rating-label{font-size:13px;color:var(--muted)}
+.reviews-grid{display:flex;flex-direction:column;gap:14px;max-width:860px;margin:0 auto 32px}
+.review{background:var(--white);border-radius:var(--r);padding:24px;box-shadow:0 2px 16px rgba(47,74,52,.07)}
+.review-stars{color:#f5a623;font-size:14px;margin-bottom:12px}
+.review-text{font-size:15px;color:var(--muted);font-style:italic;line-height:1.7;margin-bottom:16px}
+.review-author{font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:var(--green)}
+.review-source{font-size:12px;color:#aaa}
+.reviews-more{text-align:center}
+.link-underline{font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:var(--green);border-bottom:2px solid var(--sage-dark);padding-bottom:2px;transition:border-color var(--t)}
+.link-underline:hover{border-color:var(--green)}
+@media(min-width:640px){.reviews-grid{flex-direction:row}.review{flex:1}}
+
+/* GALERIA – masonry 2 stĺpce, 6 fotiek */
+.gallery-grid{columns:2;gap:10px;max-width:960px;margin:0 auto}
+.gallery-item{break-inside:avoid;margin-bottom:10px;border-radius:var(--rs);overflow:hidden;cursor:pointer;position:relative}
+.gallery-item img{width:100%;display:block;transition:transform .4s ease}
+.gallery-item:hover img{transform:scale(1.05)}
+.goverlay{position:absolute;inset:0;background:rgba(47,74,52,.4);opacity:0;transition:opacity var(--t);display:flex;align-items:center;justify-content:center}
+.gallery-item:hover .goverlay{opacity:1}
+.goverlay svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round}
+@media(min-width:640px){.gallery-grid{columns:3}}
+
+/* LIGHTBOX */
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.lb.open{display:flex}
+.lb-inner{position:relative;max-width:840px;width:100%}
+.lb-inner img{width:100%;border-radius:var(--r);max-height:88vh;object-fit:contain}
+.lb-close{position:fixed;top:16px;right:20px;width:40px;height:40px;background:var(--white);border:none;border-radius:50%;cursor:pointer;font-size:18px;font-weight:700;color:var(--green);display:flex;align-items:center;justify-content:center}
+
+/* LOKALITA */
+.map-wrap{max-width:860px;margin:0 auto}
+.map-img{border-radius:var(--r);overflow:hidden;height:240px;margin-bottom:20px;position:relative;cursor:pointer}
+.map-img img{width:100%;height:100%;object-fit:cover}
+.map-overlay{position:absolute;inset:0;background:rgba(47,74,52,.3);display:flex;align-items:center;justify-content:center}
+.map-btn{background:var(--white);color:var(--green);font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;padding:12px 22px;border-radius:50px}
+.dist-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dist{background:var(--sage);border-radius:var(--rs);padding:16px 18px;display:flex;justify-content:space-between;align-items:center}
+.dist-city{font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:var(--green)}
+.dist-time{font-size:13px;color:var(--muted);font-weight:500}
+@media(min-width:640px){.dist-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* FAQ */
+.faq-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.faq-item{background:var(--white);border-radius:var(--rs);overflow:hidden;box-shadow:0 2px 12px rgba(47,74,52,.06)}
+.faq-q{width:100%;background:none;border:none;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;font-family:'Manrope',sans-serif;font-size:15px;font-weight:600;color:var(--text);gap:12px}
+.faq-arr{width:22px;height:22px;flex-shrink:0;border:2px solid var(--terra);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--terra);font-size:11px;transition:transform var(--t),background var(--t),color var(--t)}
+.faq-item.open .faq-arr{transform:rotate(180deg);background:var(--terra);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-a{max-height:200px}
+.faq-a-inner{padding:0 22px 20px;font-size:14px;color:var(--muted);line-height:1.7}
+
+/* CTA */
+.cta-block{background:var(--green);border-radius:var(--r);padding:60px 28px;text-align:center;position:relative;overflow:hidden;max-width:960px;margin:0 auto}
+.cta-block h2{color:#fff;font-size:clamp(26px,5vw,40px);font-weight:800;margin-bottom:14px;letter-spacing:-.02em}
+.cta-block p{color:rgba(255,255,255,.72);font-size:16px;margin-bottom:36px;max-width:420px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;flex-direction:column;align-items:center;gap:14px}
+.cta-btns .btn-green{font-size:16px;padding:16px 32px}
+.cta-phone{color:rgba(255,255,255,.8);font-family:'Manrope',sans-serif;font-size:16px;font-weight:700}
+@media(min-width:640px){.cta-btns{flex-direction:row;justify-content:center}.cta-block{padding:80px 48px;margin:0 24px}}
+
+/* FOOTER */
+footer{background:#1b2e1f;color:rgba(255,255,255,.55);padding:56px 20px 100px}
+.footer-inner{max-width:960px;margin:0 auto}
+.footer-top{display:flex;flex-direction:column;gap:36px;margin-bottom:48px}
+.footer-brand{font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:8px}
+.footer-tagline{font-size:13px}
+.footer-col h4{font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+.footer-col a,.footer-col p{display:block;font-size:13px;line-height:2.1;color:rgba(255,255,255,.5);transition:color var(--t)}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;font-size:12px;color:rgba(255,255,255,.28);display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center}
+.footer-legal{display:flex;gap:20px}
+.footer-legal a{font-size:12px;color:rgba(255,255,255,.28);transition:color var(--t)}
+.footer-legal a:hover{color:rgba(255,255,255,.7)}
+@media(min-width:768px){.footer-top{flex-direction:row}.footer-top>*{flex:1}footer{padding:56px 48px 80px}}
+
+/* WA BAR */
+.wa-bar{position:fixed;bottom:0;left:0;right:0;z-index:190;background:var(--terra)}
+.wa-bar a{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px 20px;color:#fff;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700}
+.wa-bar svg{width:22px;height:22px;fill:#fff;flex-shrink:0}
+@media(min-width:768px){.wa-bar{display:none}}
+.wa-float{display:none;position:fixed;bottom:28px;right:28px;z-index:190;background:#25D366;color:#fff;font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;padding:14px 22px;border-radius:50px;align-items:center;gap:10px;box-shadow:0 4px 24px rgba(0,0,0,.18);transition:transform var(--t),box-shadow var(--t)}
+.wa-float svg{width:20px;height:20px;fill:#fff}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.22)}
+@media(min-width:768px){.wa-float{display:flex}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">
+      <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=80&auto=format&fit=crop&q=60" alt="Psí Raj">
+    </div>
+    Psí Raj
+  </a>
+  <ul class="nav-links-desktop">
+    <li><a href="#veronika">O nás</a></li>
+    <li><a href="#sluzby">Služby</a></li>
+    <li><a href="#recenzie">Recenzie</a></li>
+    <li><a href="#lokalita">Lokalita</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:+421948480013" class="nav-call">Volať</a>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- BOTTOM SHEET -->
+<div class="menu-overlay" id="overlay"></div>
+<div class="bottom-sheet" id="sheet">
+  <div class="sheet-handle"></div>
+  <ul class="sheet-links">
+    <li><a href="#veronika" onclick="closeMenu()">O nás</a></li>
+    <li><a href="#sluzby" onclick="closeMenu()">Služby</a></li>
+    <li><a href="#recenzie" onclick="closeMenu()">Recenzie</a></li>
+    <li><a href="#lokalita" onclick="closeMenu()">Lokalita</a></li>
+    <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+  </ul>
+  <div class="sheet-cta">
+    <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green" onclick="closeMenu()">Napísať na WhatsApp</a>
+    <a href="tel:+421948480013" class="btn" style="background:var(--sage);color:var(--green)" onclick="closeMenu()">Volať: 0948 480 013</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg">
+    <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1200&auto=format&fit=crop&q=85" alt="Pes a mačka – Psí Raj Most pri Bratislave">
+  </div>
+  <div class="hero-content reveal">
+    <span class="hero-badge">📍 Most pri Bratislave</span>
+    <h1>Váš miláčik<br>v dobrých rukách.</h1>
+    <p class="hero-sub">Domáce prostredie bez kotercov, neďaleko Bratislavy.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green">Napísať na WhatsApp</a>
+      <a href="#veronika" class="btn btn-ghost">Zistiť viac</a>
+    </div>
+  </div>
+</section>
+
+<!-- CURVE: hero → white -->
+<div class="curve" style="background:var(--white)">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60">
+    <path d="M0,80 C240,20 480,60 720,40 C960,20 1200,60 1440,30 L1440,80 Z" fill="#1b2e1f"/>
+  </svg>
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60" style="margin-top:-60px">
+    <path d="M0,80 C360,30 1080,60 1440,40 L1440,80 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- VERONIKA – white -->
+<section class="section section-white" id="veronika" style="padding-top:20px">
+  <div class="section-header reveal">
+    <span class="eyebrow">Kto sa stará o vášho miláčika</span>
+    <h2>Spoznajte Veroniku</h2>
+  </div>
+  <div class="veronika-card reveal">
+    <img class="veronika-img" src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=700&auto=format&fit=crop&q=80" alt="Veronika – majiteľka Psí Raj">
+    <div class="veronika-body">
+      <div class="veronika-name">Veronika</div>
+      <div class="veronika-role">Majiteľka · 15+ rokov skúseností</div>
+      <p class="veronika-quote">„Nie som len hotel pre psov, ale milovníčka zvierat – zvieratká žijú ako súčasť rodiny, výlučne v interiéri domu. Žiadne klietky ani koterce."</p>
+      <div class="veronika-tags">
+        <span class="vtag">Domáce prostredie</span>
+        <span class="vtag">Foto &amp; video každý deň</span>
+        <span class="vtag">Individuálny prístup</span>
+        <span class="vtag">Veterinár na telefóne</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURVE: white → sage -->
+<div class="curve" style="background:var(--sage)">
+  <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
+    <path d="M0,0 C360,70 1080,10 1440,50 L1440,70 L0,70 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- USP – sage -->
+<section class="section section-sage" style="padding-top:20px" id="usp">
+  <div class="section-header reveal">
+    <span class="eyebrow">Prečo si vybrať Psí Raj</span>
+    <h2>Toto u nás nájdete</h2>
+  </div>
+  <div class="usp-grid">
+    <div class="usp-card reveal"><div class="usp-num">01</div><h3>Žiadne klietky</h3><p>Voľný pohyb po dome, spánok s rodinou, domáca pohoda.</p></div>
+    <div class="usp-card reveal reveal-delay-1"><div class="usp-num">02</div><h3>8 árový výbeh</h3><p>Zabezpečený pozemok a každodenné prechádzky vonku.</p></div>
+    <div class="usp-card reveal reveal-delay-2"><div class="usp-num">03</div><h3>Fotky každý deň</h3><p>Správy na WhatsApp každý deň – budete mať pokoj.</p></div>
+    <div class="usp-card reveal reveal-delay-3"><div class="usp-num">04</div><h3>Max 6 zvierat</h3><p>Nikdy preplnené – každý dostane plnú pozornosť.</p></div>
+  </div>
+</section>
+
+<!-- CURVE: sage → white -->
+<div class="curve" style="background:var(--white)">
+  <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
+    <path d="M0,0 C480,70 960,20 1440,50 L1440,70 L0,70 Z" fill="#DCE8D6"/>
+  </svg>
+</div>
+
+<!-- AKO FUNGUJE – white -->
+<section class="section section-white" id="ako" style="padding-top:20px">
+  <div class="section-header reveal">
+    <span class="eyebrow">Jednoduchý proces</span>
+    <h2>Ako to funguje</h2>
+    <p>Tri jednoduché kroky a váš miláčik je v dobrých rukách.</p>
+  </div>
+  <div class="steps-wrap">
+    <div class="step reveal">
+      <div class="step-num">1</div>
+      <div class="step-body"><h3>Napíšete nám</h3><p>Pošlite správu na WhatsApp alebo zavolajte. Dohodneme termín a povieme si o vašom miláčikovi.</p></div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">2</div>
+      <div class="step-body"><h3>Privezieme alebo prevezieme</h3><p>Miláčika prinesie priamo k nám, alebo zabezpečíme zvierací taxík – odvoz aj dovoz.</p></div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">3</div>
+      <div class="step-body"><h3>Každý deň správy</h3><p>Počas celého pobytu dostávate fotky a videá. Váš miláčik žije u nás ako doma – vy si užívate voľno v pokoji.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURVE: white → sage -->
+<div class="curve" style="background:var(--sage)">
+  <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
+    <path d="M0,20 C360,70 1080,0 1440,50 L1440,70 L0,70 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- SLUZBY – sage -->
+<section class="section section-sage" id="sluzby" style="padding-top:20px;padding-left:0;padding-right:0">
+  <div class="section-header reveal" style="padding:0 20px">
+    <span class="eyebrow">Čo ponúkame</span>
+    <h2>Naše služby</h2>
+    <p>Potiahnite pre ďalšie služby</p>
+  </div>
+  <div class="sluzby-scroll" id="sluzbyScroll">
+    <div class="sluzba active">
+      <img src="https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?w=600&auto=format&fit=crop&q=75" alt="Ubytovanie v domácom prostredí">
+      <div class="sluzba-body"><h3>Ubytovanie v domácom prostredí</h3><p>Psy, mačky, zajace, papagáje – všetci žijú v interiéri domu ako súčasť rodiny. Žiadne koterce ani klietky.</p></div>
+    </div>
+    <div class="sluzba">
+      <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=600&auto=format&fit=crop&q=75" alt="Výbeh a prechádzky">
+      <div class="sluzba-body"><h3>Výbeh a prechádzky</h3><p>8 árový zabezpečený pozemok. Pravidelné prechádzky každý deň – miláčik sa vždy dobre vybeháva.</p></div>
+    </div>
+    <div class="sluzba">
+      <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&auto=format&fit=crop&q=75" alt="Zvierací taxík">
+      <div class="sluzba-body"><h3>Zvierací taxík</h3><p>Odvoz a dovoz miláčika priamo od vás domov. Pohodlne, bezpečne, bez stresu.</p></div>
+    </div>
+    <div class="sluzba">
+      <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=600&auto=format&fit=crop&q=75" alt="Škôlka pre psov">
+      <div class="sluzba-body"><h3>Škôlka pre psíkov</h3><p>Socializácia, základné návyky a pohyb v bezpečnom rodinnom prostredí.</p></div>
+    </div>
+  </div>
+  <div class="sluzby-dots" id="sluzbyDots">
+    <div class="sluzby-dot active"></div>
+    <div class="sluzby-dot"></div>
+    <div class="sluzby-dot"></div>
+    <div class="sluzby-dot"></div>
+  </div>
+</section>
+
+<!-- CURVE: sage → white -->
+<div class="curve" style="background:var(--white)">
+  <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
+    <path d="M0,0 C600,70 900,20 1440,40 L1440,70 L0,70 Z" fill="#DCE8D6"/>
+  </svg>
+</div>
+
+<!-- RECENZIE – white -->
+<section class="section section-white" id="recenzie" style="padding-top:20px">
+  <div class="section-header reveal">
+    <span class="eyebrow">Čo hovoria majitelia</span>
+    <h2>Recenzie</h2>
+  </div>
+  <div class="rating-hero reveal">
+    <div class="rating-num">5.0</div>
+    <div class="rating-stars">★★★★★</div>
+    <div class="rating-label">Hodnotenia na Google</div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">„Veronika sa o nášho psa starala ako o vlastného. Dostávali sme fotky každý deň a boli sme úplne pokojní počas celej dovolenky."</p>
+      <div class="review-author">Monika H.</div>
+      <div class="review-source">Google recenzia</div>
+    </div>
+    <div class="review reveal reveal-delay-1">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">„Konečne miesto, kde pes žije normálne – nie v kotercoch. Bol spokojný, unavený z výbehu a doma spal celý deň. Odporúčam každému."</p>
+      <div class="review-author">Peter K.</div>
+      <div class="review-source">Google recenzia</div>
+    </div>
+  </div>
+  <div class="reviews-more reveal">
+    <a href="https://www.google.com/maps" class="link-underline" target="_blank" rel="noopener">Zobraziť všetky recenzie na Google →</a>
+  </div>
+</section>
+
+<!-- CURVE: white → sage -->
+<div class="curve" style="background:var(--sage)">
+  <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
+    <path d="M0,30 C480,70 960,10 1440,50 L1440,70 L0,70 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- GALERIA – sage, 6 fotiek, masonry -->
+<section class="section section-sage" id="galeria" style="padding-top:20px">
+  <div class="section-header reveal">
+    <span class="eyebrow">Galéria</span>
+    <h2>Naši miláčikovia</h2>
+    <p>Každodenné momenty šťastia u nás doma.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal" onclick="openLb(this)"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=500&auto=format&fit=crop&q=75" alt=""><div class="goverlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <div class="gallery-item reveal" onclick="openLb(this)"><img src="https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?w=500&auto=format&fit=crop&q=75" alt=""><div class="goverlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <div class="gallery-item reveal" onclick="openLb(this)"><img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=500&auto=format&fit=crop&q=75" alt=""><div class="goverlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <div class="gallery-item reveal" onclick="openLb(this)"><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=500&auto=format&fit=crop&q=75" alt=""><div class="goverlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <div class="gallery-item reveal" onclick="openLb(this)"><img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=500&auto=format&fit=crop&q=75" alt=""><div class="goverlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+    <div class="gallery-item reveal" onclick="openLb(this)"><img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=500&auto=format&fit=crop&q=75" alt=""><div class="goverlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+  </div>
+</section>
+
+<div class="lb" id="lb" onclick="closeLb()">
+  <div class="lb-inner" onclick="event.stopPropagation()">
+    <button class="lb-close" onclick="closeLb()">✕</button>
+    <img id="lb-img" src="" alt="">
+  </div>
+</div>
+
+<!-- CURVE: sage → white -->
+<div class="curve" style="background:var(--white)">
+  <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
+    <path d="M0,0 C360,70 1080,20 1440,50 L1440,70 L0,70 Z" fill="#DCE8D6"/>
+  </svg>
+</div>
+
+<!-- TRUST PÁS – white -->
+<section class="section section-white" id="trust" style="padding-top:20px;padding-bottom:40px">
+  <div class="trust-wrap">
+    <div class="trust-item reveal">
+      <h3>Očkovanie povinné</h3>
+      <p>Zdravie každého miláčika je pre nás na prvom mieste.</p>
+    </div>
+    <div class="trust-item reveal reveal-delay-1">
+      <h3>Veterinár na telefóne</h3>
+      <p>Vždy dostupný, vždy blízko.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CURVE: white → sage -->
+<div class="curve" style="background:var(--sage)">
+  <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
+    <path d="M0,20 C480,70 960,10 1440,45 L1440,70 L0,70 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- LOKALITA – sage -->
+<section class="section section-sage" id="lokalita" style="padding-top:20px">
+  <div class="section-header reveal">
+    <span class="eyebrow">Kde nás nájdete</span>
+    <h2>Lokalita</h2>
+    <p>Most pri Bratislave – ľahko dostupné z celého regiónu.</p>
+  </div>
+  <div class="map-wrap">
+    <div class="map-img reveal">
+      <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=900&auto=format&fit=crop&q=60" alt="Most pri Bratislave">
+      <div class="map-overlay">
+        <a href="https://maps.google.com/?q=Nálepková+302,+Most+pri+Bratislave" target="_blank" rel="noopener" class="map-btn">Otvoriť v Google Mapách</a>
+      </div>
+    </div>
+    <div class="dist-grid">
+      <div class="dist reveal"><span class="dist-city">Bratislava</span><span class="dist-time">~20 min</span></div>
+      <div class="dist reveal"><span class="dist-city">Senec</span><span class="dist-time">~10 min</span></div>
+      <div class="dist reveal"><span class="dist-city">Šamorín</span><span class="dist-time">~15 min</span></div>
+      <div class="dist reveal"><span class="dist-city">Trnava</span><span class="dist-time">~25 min</span></div>
+      <div class="dist reveal"><span class="dist-city">Pezinok</span><span class="dist-time">~25 min</span></div>
+      <div class="dist reveal"><span class="dist-city">Malacky</span><span class="dist-time">~30 min</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURVE: sage → white -->
+<div class="curve" style="background:var(--white)">
+  <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
+    <path d="M0,10 C600,70 840,20 1440,40 L1440,70 L0,70 Z" fill="#DCE8D6"/>
+  </svg>
+</div>
+
+<!-- FAQ – white -->
+<section class="section section-white" id="faq" style="padding-top:20px">
+  <div class="section-header reveal">
+    <span class="eyebrow">Časté otázky</span>
+    <h2>Máte otázky?</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Aké zvieratá môžete ubytovať?<span class="faq-arr">▼</span></button><div class="faq-a"><div class="faq-a-inner">Ubytujeme psy, mačky, zajace aj papagáje. Každé zviera žije v interiéri domu, nie v kotercoch.</div></div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Budú zvieratká v klietkach?<span class="faq-arr">▼</span></button><div class="faq-a"><div class="faq-a-inner">Nie. Zvieratká voľne žijú v dome ako súčasť rodiny – presne tak, ako sú zvyknuté doma u vás.</div></div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Je očkovanie povinné?<span class="faq-arr">▼</span></button><div class="faq-a"><div class="faq-a-inner">Áno, podmienkou pobytu je platné očkovanie. Chránime zdravie všetkých miláčikov u nás.</div></div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Ponúkate zvierací taxík?<span class="faq-arr">▼</span></button><div class="faq-a"><div class="faq-a-inner">Áno, zabezpečíme odvoz a dovoz miláčika priamo od vás. Cenu dohodneme individuálne podľa vzdialenosti.</div></div></div>
+    <div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)">Čo ak bude potrebovať veterinára?<span class="faq-arr">▼</span></button><div class="faq-a"><div class="faq-a-inner">V prípade zdravotných ťažkostí vás ihneď kontaktujeme. Spolupracujeme s miestnym veterinárom dostupným na telefóne.</div></div></div>
+  </div>
+</section>
+
+<!-- CURVE: white → dark -->
+<div class="curve" style="background:var(--green)">
+  <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50">
+    <path d="M0,20 C480,70 960,10 1440,45 L1440,70 L0,70 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- CTA – dark green -->
+<section class="section section-dark" style="padding-top:20px">
+  <div class="cta-block reveal">
+    <span class="eyebrow" style="color:var(--terra)">Kontakt</span>
+    <h2 style="color:#fff">Chcete ubytovať miláčika?</h2>
+    <p>Napíšte nám na WhatsApp – odpovieme rýchlo a dohodneme všetko osobne.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green">Napísať na WhatsApp</a>
+      <a href="tel:+421948480013" class="cta-phone">0948 480 013</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Psí Raj</div>
+        <p class="footer-tagline">Starostlivosť, kde sa psy cítia ako v raji.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigácia</h4>
+        <a href="#veronika">O nás</a><a href="#sluzby">Služby</a><a href="#recenzie">Recenzie</a><a href="#lokalita">Lokalita</a><a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="tel:+421948480013">0948 480 013</a>
+        <a href="https://wa.me/421948480013">WhatsApp</a>
+        <p>Nálepková 302, Most pri Bratislave</p>
+        <a href="https://facebook.com/profile.php?id=61567472106626" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div class="footer-col">
+        <h4>Právne</h4>
+        <a href="#">Ochrana osobných údajov</a>
+        <a href="#">Cookies</a>
+        <p style="margin-top:14px;font-size:11px;opacity:.35">Animio s.r.o. · IČO: 57269971</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Psí Raj – Animio s.r.o. Všetky práva vyhradené.</p>
+      <div class="footer-legal"><a href="#">Ochrana osobných údajov</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- WA BAR MOBILE -->
+<div class="wa-bar">
+  <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika.">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Napísať na WhatsApp
+  </a>
+</div>
+
+<!-- WA FLOAT DESKTOP -->
+<a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="wa-float" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  Napísať na WhatsApp
+</a>
+
+<script>
+// Nav shadow
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10);
+});
+
+// Hero parallax
+window.addEventListener('scroll',()=>{
+  const hero=document.getElementById('heroBg');
+  if(hero){hero.style.transform=`translateY(${window.scrollY*0.3}px)`;}
+});
+
+// Hero image load
+window.addEventListener('load',()=>{
+  document.getElementById('heroBg').classList.add('loaded');
+});
+
+// Burger / bottom sheet
+const burger=document.getElementById('burger');
+const sheet=document.getElementById('sheet');
+const overlay=document.getElementById('overlay');
+function openMenu(){burger.classList.add('open');sheet.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}
+function closeMenu(){burger.classList.remove('open');sheet.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}
+burger.addEventListener('click',()=>{sheet.classList.contains('open')?closeMenu():openMenu();});
+overlay.addEventListener('click',closeMenu);
+
+// Scroll reveal
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Sluzby snap scroll + active card
+const scroll=document.getElementById('sluzbyScroll');
+const cards=scroll.querySelectorAll('.sluzba');
+const dots=document.querySelectorAll('.sluzby-dot');
+function updateActive(){
+  const center=scroll.scrollLeft+scroll.offsetWidth/2;
+  let closest=0,minDist=Infinity;
+  cards.forEach((c,i)=>{
+    const dist=Math.abs(c.offsetLeft+c.offsetWidth/2-center);
+    if(dist<minDist){minDist=dist;closest=i;}
+  });
+  cards.forEach(c=>c.classList.remove('active'));
+  dots.forEach(d=>d.classList.remove('active'));
+  cards[closest].classList.add('active');
+  dots[closest].classList.add('active');
+}
+scroll.addEventListener('scroll',updateActive,{passive:true});
+dots.forEach((d,i)=>{
+  d.addEventListener('click',()=>{
+    cards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+  });
+});
+
+// FAQ
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+
+// Lightbox
+function openLb(el){
+  document.getElementById('lb-img').src=el.querySelector('img').src;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLb(){
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLb();closeMenu();}});
+</script>
+</body>
+</html>
