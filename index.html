@@ -221,7 +221,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
   width:100%;
   height:280px;
   object-fit:cover;
-  object-position:center 5%;
+  object-position:center top;
   display:block;
 }
 @media(min-width:768px){
@@ -290,6 +290,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(47,74,52,.10)}
   .sluzba{flex:0 0 280px}
 }
  
+@keyframes trust-loc-pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,121,74,.5)}60%{box-shadow:0 0 0 8px rgba(200,121,74,0)}}
 /* PULSE na WA tlačidlo */
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(56,168,72,.45)}70%{box-shadow:0 0 0 14px rgba(56,168,72,0)}100%{box-shadow:0 0 0 0 rgba(56,168,72,0)}}
 .btn-pulse{animation:pulse 2.5s infinite}
@@ -479,23 +480,42 @@ footer{background:var(--white);color:var(--text);padding:56px 20px 100px}
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content reveal">
+    <div class="hero-img-card">
+      <img src="hero1.png" alt="Veronika s psami – Psí Raj hotel pre psov Most pri Bratislave">
+    </div>
     <div class="hero-text-col">
-      <span class="hero-badge">📍 Most pri Bratislave · od 20 € / deň</span>
-      <h1>Doprajte im domov, kde sa cítia milovaní.</h1>
-      <p class="hero-sub">Rodinná starostlivosť bez kotercov — pokojné miesto len pár minút od Bratislavy.</p>
+      <h1>Hotel pre psov s láskou neďaleko Bratislavy.</h1>
+      <p class="hero-sub">Nie som len hotel – som milovníčka zvierat s 15 rokmi skúseností. Váš miláčik žije v rodinnom dome, nie v kotercoch.</p>
       <div class="hero-btns">
         <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-hero-wa btn-pulse">Napíšte nám</a>
-        <a href="#veronika" class="btn btn-hero-more">Zistiť viac</a>
       </div>
-    </div>
-    <div class="hero-img-card">
-      <picture>
-        <source media="(min-width:768px)" srcset="psi-hotel-bratislava.jpg">
-        <img src="psi-hotel-most-pri-bratislave.jpg" alt="Pes a mačka na gauči – Psí Raj Most pri Bratislave">
-      </picture>
     </div>
   </div>
 </section>
+ 
+<!-- TRUST STRIP -->
+<div style="position:relative;z-index:10;margin:-36px 16px 0;background:var(--white);border-radius:20px;border:1.5px solid rgba(200,121,74,.25);box-shadow:0 8px 28px rgba(47,74,52,.10);animation:trust-loc-pulse 2.5s ease-in-out infinite">
+  <div style="display:grid;grid-template-columns:1fr 1fr">
+    <div style="padding:16px 12px;text-align:center;border-right:0.5px solid rgba(47,74,52,.1);border-bottom:0.5px solid rgba(47,74,52,.1)">
+      <div style="color:var(--terra);font-size:11px;letter-spacing:1px;margin-bottom:3px">★★★★★</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:var(--green);line-height:1">5.0</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px">Google recenzie</div>
+    </div>
+    <div style="padding:16px 12px;text-align:center;border-bottom:0.5px solid rgba(47,74,52,.1)">
+      <div style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:var(--green);line-height:1">od 20€</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px">za deň</div>
+    </div>
+    <div style="padding:16px 12px;text-align:center;border-right:0.5px solid rgba(47,74,52,.1);border-radius:0 0 0 20px">
+      <div style="font-size:18px;line-height:1;margin-bottom:3px">📍</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:800;color:var(--green);line-height:1.2">Most pri BA</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px">lokalita</div>
+    </div>
+    <div style="padding:16px 12px;text-align:center;border-radius:0 0 20px 0">
+      <div style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;color:var(--green);line-height:1">max 6</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px">zvierat naraz</div>
+    </div>
+  </div>
+</div>
  
 <!-- CURVE: hero → white -->
 <div class="curve" style="background:var(--white)">
@@ -514,7 +534,7 @@ footer{background:var(--white);color:var(--text);padding:56px 20px 100px}
     <h2>Spoznajte Veroniku</h2>
   </div>
   <div class="veronika-card reveal">
-    <img class="veronika-img" src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=700&auto=format&fit=crop&q=80" alt="Veronika – majiteľka Psí Raj">
+    <img class="veronika-img" src="hero1.png" alt="Veronika – majiteľka Psí Raj">
     <div class="veronika-body">
       <div class="veronika-name">Veronika <svg style="width:20px;height:20px;opacity:0.8;vertical-align:middle;margin-left:6px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 11C18.8807 11 20 9.88071 20 8.5C20 7.11929 18.8807 6 17.5 6C16.1193 6 15 7.11929 15 8.5C15 9.88071 16.1193 11 17.5 11Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.5 7C13.8807 7 15 5.88071 15 4.5C15 3.11929 13.8807 2 12.5 2C11.1193 2 10 3.11929 10 4.5C10 5.88071 11.1193 7 12.5 7Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 7C8.88071 7 10 5.88071 10 4.5C10 3.11929 8.88071 2 7.5 2C6.11929 2 5 3.11929 5 4.5C5 5.88071 6.11929 7 7.5 7Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 11C3.88071 11 5 9.88071 5 8.5C5 7.11929 3.88071 6 2.5 6C1.11929 6 0 7.11929 0 8.5C0 9.88071 1.11929 11 2.5 11Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 13C10 11.3431 11.3431 10 13 10H17C18.6569 10 20 11.3431 20 13V17C20 19.2091 18.2091 21 16 21H14C11.7909 21 10 19.2091 10 17V13Z" stroke="#C8794A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="veronika-role">Majiteľka · 15+ rokov skúseností</div>
@@ -785,11 +805,13 @@ footer{background:var(--white);color:var(--text);padding:56px 20px 100px}
 <!-- KONTAKT -->
 <section class="section section-sage" style="padding-top:20px;padding-bottom:72px">
   <div class="cta-block reveal">
-    <span class="eyebrow">Kontakt</span>
     <h2>Chcete ubytovať miláčika?</h2>
     <p>Napíšte nám na WhatsApp – odpovieme rýchlo a dohodneme všetko osobne.</p>
     <div class="cta-btns">
-      <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green btn-pulse">Napíšte nám</a>
+      <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." class="btn btn-green btn-pulse">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#C8794A"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Overiť termín
+      </a>
       <a href="tel:+421948480013" class="cta-phone">0948 480 013</a>
     </div>
   </div>
@@ -838,10 +860,15 @@ footer{background:var(--white);color:var(--text);padding:56px 20px 100px}
  
 <!-- WA BAR MOBILE -->
 <div class="wa-bar">
-  <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika.">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Napíšte nám
-  </a>
+  <div style="display:flex;align-items:stretch">
+    <a href="tel:+421948480013" style="display:flex;align-items:center;padding:14px 14px;color:var(--terra);font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;text-decoration:none;gap:8px">
+      <svg viewBox="0 0 24 24" style="width:17px;height:17px;fill:var(--terra);flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      0948 480 013
+    </a>
+    <a href="https://wa.me/421948480013?text=Dobrý deň, mám záujem o ubytovanie miláčika." style="display:flex;align-items:center;padding:14px 14px;color:var(--terra);font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;text-decoration:none">
+      Overiť termín
+    </a>
+  </div>
 </div>
  
 <!-- WA FLOAT DESKTOP -->
